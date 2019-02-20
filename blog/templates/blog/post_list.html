@@ -6,14 +6,17 @@
 		<div><h1><a href="/">Django Girls Blog</a></h1>
 		</div>
 
-		<div><p>published: 19.02.2019, 3:56pm</p>
-			<h2><a href="">My first post</a></h2>
-			<p>As this is going to be my first blog first as the name suggest itself and it holds some important posts on about my first programming language and my first project on that particular language. I hope you guys gonna enjoy much more.</p>
-		</div>
-
-		<div><p>published: 19.02.2019, 4:00pm</p>
-			<h3><a href="">My second post</a></h3>
-			<p>As this one is going to be my secong blog post and it covers all about having a good physique and better health as well as strong and healthy mind.</p>
-		</div>
+		{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+		
 	</body>
 </html>
+
+
+
+
